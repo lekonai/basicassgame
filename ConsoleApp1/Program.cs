@@ -11,13 +11,17 @@ namespace ConsoleApp1
     class Program
     {
 
-
-
-        static int hp; // global variable for hp
+        static int hp = 20; // global variable for hp
         static int rngMeter; // global variable that changes the range of rng
         static int rngOutput; // global variable to share the chance to main etc
+        
+        
         static private void Main(string[] args)
-        {      
+        {
+            Console.Title = "The best new six part Danish crime drama";
+            bool morkT = true;
+
+            CSwitch(morkT);
             Console.Write("hi there");
             Thread.Sleep(1000);
             Console.Write(".");
@@ -34,48 +38,141 @@ namespace ConsoleApp1
             Thread.Sleep(1000);
             Console.Write(".");
             Thread.Sleep(2000);
-
+            morkT = false;
+            CSwitch(morkT);
             Console.WriteLine("\n\n(y/n)");
             string inp = Console.ReadLine();
             if (inp.ToLower() == "y")
             {
                 // bool keyp = false;
                 // stack overflow did not help, i wanted to make a funny little bit where it basically was just like "hey, you know you can click a button" if an input hadn't been detected but i'm too dumb for that
-                
+                morkT = true;
+                CSwitch(morkT);
                 Console.WriteLine("Welcome... welcome to the most fun you'll have in the past and next 5 minutes");
+                morkT = false;
+                CSwitch(morkT);
                 Console.WriteLine("Please wait a second or two for everything to process...");
 
+                morkT = true;
+                CSwitch(morkT);
                 Thread.Sleep(5000);
                 Console.WriteLine("(just kidding, you can press any button to continue.)");
 
+                morkT = false;
+                CSwitch(morkT);
                 Console.ReadKey();
                 // keyp = true;
-                Console.WriteLine("Remember, it's just a game, if it's frustrating, I'm not sorry...");
+                Console.WriteLine("Remember, it's just a game, don't get frustrated by the gambling-like odds...");
             }
             else if (inp.ToLower() == "n")
             {
+                morkT = true;
+                CSwitch(morkT);
                 Console.WriteLine("well, that's respectable. have a good day.");
                 Thread.Sleep(1000);
                 Environment.Exit(0); // quits, funny
             }
             else
             {
+                morkT = true;
+                CSwitch(morkT);
                 Console.WriteLine("odd input, okay... nice to know you.");
                 Thread.Sleep(1000);
                 Environment.Exit(0); // quits but this one is if you just don't listen
             }
             Console.ReadKey();
 
-            Console.WriteLine("\nYou can call me Mork, but it's better if you don't refer to me at all...");
+            morkT = true;
+            CSwitch(morkT);
+            Console.WriteLine("\nYou can call me Mork, every time there's this red text you'll know it's me :)...");
 
             Console.ReadKey();
 
-            Console.WriteLine("Sorry are you expe- OH yes this is a game, okay let me just boot it up. Well.. okay, enjoy !");
+            Console.WriteLine("\nSorry are you expe- OH yes this is a game, okay let me just boot it up. Well.. okay, enjoy !");
 
-            Thread.Sleep(2000);
-            Console.WriteLine("PLEASE WAIT.");
-
+            Thread.Sleep(1000);
+            morkT = false;
+            CSwitch(morkT);
+            Console.WriteLine("\nPLEASE WAIT.");
+            Thread.Sleep(3000);
+            Console.Title = "Rays of electrical light";
+            string wakeUp = @" _______________
+|,----------.  |\
+||           |=| |
+||          || | |
+||       . _o| | | __
+|`-----------' |/ /~/
+ ~~~~~~~~~~~~~~~ / /
+                 ~~"; //first introduction and ascii art
+            Console.WriteLine(wakeUp);
+            morkT = true;
+            CSwitch(morkT);
+            Console.WriteLine("\nYou wake up in front of the TV, your head still hurts from last night...");
             Console.ReadKey();
+            Console.WriteLine("You struggle to comprehend anything, you struggle to comprehend why you would do what you did last night... wait, do you even remember?...");
+            Console.ReadKey();
+            Console.WriteLine("Not even your name matters to you at this point, everything's a swirly mess...");
+            Console.ReadKey();
+            Console.WriteLine("All you know is that there seems to be a new channel on your TV...");
+            Console.ReadKey();
+            morkT = false;
+            CSwitch(morkT);
+            Console.WriteLine("What are you to do?:\n[A] Click on the new channel\n[B] Turn off the TV and continue sleeping");
+            bool choiceSelection = false;
+            while (choiceSelection == false){
+                string theChoice1 = Console.ReadLine().ToUpper();
+                switch (theChoice1)
+                {
+                    case "A":
+                        choiceSelection = true;
+                        break;
+                    case "B":
+                        morkT = true;
+                        CSwitch(morkT);
+                        Console.WriteLine("You have a nice dream... and that's the end of your story");
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        morkT = true;
+                        CSwitch(morkT);
+                        Console.WriteLine("Listen mate don't be silly please");
+                        morkT = false;
+                        CSwitch(morkT);
+                        Console.WriteLine("Pick again, but sensibly !");
+                        break;
+                }
+            }
+            morkT = true;
+            CSwitch(morkT);
+            Console.WriteLine("\n In all honesty that was the only correct choice!, well done!");
+            Thread.Sleep(900);
+            Console.WriteLine("You start remembering your NEW name, it's Vialio. Oh, wait, this just in, not a new name, you've known it for all 24 years of your life...");
+            Console.ReadKey();
+            Console.WriteLine("You'll be known as V to everyone wait I mean ok listen that was spoilers, just ignore that. I'll call you V from now on though...");
+            Console.ReadKey();
+            Console.WriteLine("Before we continue with our plot devices and whatnot, we're going to roll a die, and depending on it you'll be either a male or female...");
+            Console.ReadKey();
+            morkT = false;
+            CSwitch(morkT);
+            Console.WriteLine("Press any key to do the die roll !");
+            rngMeter = 1;
+            RNG();
+            bool mOrF; // simple 1 or 0 if you are male or female. M = 1, F = 0
+            if (rngOutput <= 3)
+            {
+                Console.WriteLine("\nYou rolled a: {0}, which means you're a male!", rngOutput);
+                mOrF = true;
+            }
+            else if (rngOutput > 3)
+            {
+                Console.WriteLine("\nYou rolled a: {0}, which means you're a female!", rngOutput);
+                mOrF = false;
+            }
+            Console.ReadKey();
+
+
+
+            Console.ReadKey(); // wait to quit readkey.
         }
 
         static private void RNG()
@@ -85,6 +182,53 @@ namespace ConsoleApp1
             if (rngMeter == 1)
             {
                 int num1 = rnggg.Next(1, 7); // basic die roll
+                switch (num1)
+                {
+                    case 1:
+                        Console.WriteLine(@"-----
+|   |
+| o |
+|   |
+-----");
+                        break;
+                    case 2:
+                        Console.WriteLine(@"-----
+|o  |
+|   |
+|  o|
+-----");
+                        break;
+                    case 3:
+                        Console.WriteLine(@"-----
+|o  |
+| o |
+|  o|
+-----");
+                        break;
+                    case 4:
+                        Console.WriteLine(@"-----
+|o o|
+|   |
+|o o|
+-----");
+
+                        break;
+                    case 5:
+                        Console.WriteLine(@"-----
+|o o|
+| o |
+|o o|
+-----");
+                        break;
+                    case 6:
+                        Console.WriteLine(@"-----
+|o o|
+|o o|
+|o o|
+-----");
+                        break;
+                }
+
                 rngOutput = num1;
             }
             else if (rngMeter == 2)
@@ -96,6 +240,18 @@ namespace ConsoleApp1
             {
                 int num3 = rnggg.Next(1, 101); // the funny one
                 rngOutput = num3;
+            }
+        }
+
+        static private void CSwitch(bool MorkTalking) // switches colour for when Mork is talking
+        {
+            if (MorkTalking == true)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if (MorkTalking == false)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 

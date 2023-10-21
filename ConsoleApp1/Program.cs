@@ -5,18 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace ConsoleApp1
+namespace BestGameEver
 {
 
     class Program
     {
 
-        static int hp = 20; // global variable for hp
-        static int rngMeter; // global variable that changes the range of rng
-        static int rngOutput; // global variable to share the chance to main etc
+        static public int hp = 20; // global variable for hp
+        static public int rngMeter; // global variable that changes the range of rng
+        static public int rngOutput; // global variable to share the chance to main etc
         
         
-        static private void Main(string[] args)
+        static public void Main(string[] args)
         {
             Console.Title = "The best new six part Danish crime drama"; // console title part 1
             bool morkT = true;
@@ -185,22 +185,50 @@ namespace ConsoleApp1
             Console.ReadKey();
             morkT = true;
             CSwitch(morkT);
+            
             Console.WriteLine("\nThat's out the way now, let's go back to the TV...");
             Console.ReadKey();
+            
             Console.WriteLine("As you lock onto the TV's LCD screen, your hand subconsciously grabs the remote and switches to the brand new TV channel...");
             Console.ReadKey();
+            
             Console.WriteLine("Colours. That's all you see, they mesmerise your weak brain. You sit in awe at the TV screen...");
             Console.ReadKey();
+            
             Console.WriteLine("Your hand releases off the remote and into the TV...");
             Console.ReadKey();
+            
             Console.WriteLine("BWOAAAH Your mind is boggled, your hand is IN the TV??? HOW?? I don't know how that works I'm just Mork...");
+            Console.ReadKey();
+            
+            Console.WriteLine("You go deeper and deeper until your arm is submerged within it; you only feel a weird tingle as you continuously have your arm willingly eaten by the TV");
+            Console.ReadKey();
+
+
+            Console.WriteLine("\nIT'S DIE ROLL TIME!!");
+            Thread.Sleep(1000);
+            Console.WriteLine("I'm not going to tell you what it's for :)");
+            Thread.Sleep(1900);
+            Console.WriteLine("You brought this upon yourself by going into that DARN TV.");
+            
+            morkT = false;
+            CSwitch(morkT);
+
+            Console.WriteLine(@"");
+            Console.ReadKey();
+            rngMeter = 2;
+            RNG();
+            if (rngOutput <= 10)
+            {
+                Console.WriteLine("")
+            }
 
 
 
             Console.ReadKey(); // wait to quit readkey.
         }
 
-        static private void RNG()
+        static public void RNG()
         {
             Random rnggg = new Random();
 
@@ -260,6 +288,11 @@ namespace ConsoleApp1
             {
                 int num2 = rnggg.Next(1, 21); // like a dnd hit dc
                 rngOutput = num2;
+                Console.WriteLine(@"-----
+|   |
+|{0}|
+|   |
+-----",rngOutput);
             }
             else if (rngMeter == 3)
             {
@@ -268,7 +301,7 @@ namespace ConsoleApp1
             }
         }
 
-        static private void CSwitch(bool MorkTalking) // switches colour for when Mork is talking
+        static public void CSwitch(bool MorkTalking) // switches colour for when Mork is talking
         {
             if (MorkTalking == true)
             {

@@ -191,7 +191,9 @@ namespace ConsoleApp1
             Console.ReadKey();
             Console.WriteLine("Colours. That's all you see, they mesmerise your weak brain. You sit in awe at the TV screen...");
             Console.ReadKey();
-            Console.WriteLine("Your hand releases off the remote and ");
+            Console.WriteLine("Your hand releases off the remote and into the TV...");
+            Console.ReadKey();
+            Console.WriteLine("BWOAAAH Your mind is boggled, your hand is IN the TV??? HOW?? I don't know how that works I'm just Mork...");
 
 
 

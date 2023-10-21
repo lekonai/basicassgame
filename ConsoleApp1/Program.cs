@@ -18,7 +18,7 @@ namespace ConsoleApp1
         
         static private void Main(string[] args)
         {
-            Console.Title = "The best new six part Danish crime drama";
+            Console.Title = "The best new six part Danish crime drama"; // console title part 1
             bool morkT = true;
 
             CSwitch(morkT);
@@ -95,7 +95,7 @@ namespace ConsoleApp1
             CSwitch(morkT);
             Console.WriteLine("\nPLEASE WAIT.");
             Thread.Sleep(3000);
-            Console.Title = "Rays of electrical light";
+            Console.Title = "Rays of electrical light"; // console title changes for mood
             string wakeUp = @" _______________
 |,----------.  |\
 ||           |=| |
@@ -105,18 +105,25 @@ namespace ConsoleApp1
  ~~~~~~~~~~~~~~~ / /
                  ~~"; //first introduction and ascii art
             Console.WriteLine(wakeUp);
+            
             morkT = true;
             CSwitch(morkT);
+
             Console.WriteLine("\nYou wake up in front of the TV, your head still hurts from last night...");
             Console.ReadKey();
+
             Console.WriteLine("You struggle to comprehend anything, you struggle to comprehend why you would do what you did last night... wait, do you even remember?...");
             Console.ReadKey();
+
             Console.WriteLine("Not even your name matters to you at this point, everything's a swirly mess...");
             Console.ReadKey();
+
             Console.WriteLine("All you know is that there seems to be a new channel on your TV...");
             Console.ReadKey();
+
             morkT = false;
             CSwitch(morkT);
+
             Console.WriteLine("What are you to do?:\n[A] Click on the new channel\n[B] Turn off the TV and continue sleeping");
             bool choiceSelection = false;
             while (choiceSelection == false){
@@ -142,18 +149,25 @@ namespace ConsoleApp1
                         break;
                 }
             }
+
             morkT = true;
             CSwitch(morkT);
-            Console.WriteLine("\n In all honesty that was the only correct choice!, well done!");
+
+            Console.WriteLine("\nIn all honesty that was the only correct choice! Well done!");
             Thread.Sleep(900);
-            Console.WriteLine("You start remembering your NEW name, it's Vialio. Oh, wait, this just in, not a new name, you've known it for all 24 years of your life...");
+
+            Console.WriteLine("You start remembering your NEW name, it's Vialio... oh? Oh wait, this just in, not a new name, you've known it for all 24 years of your life...");
             Console.ReadKey();
+
             Console.WriteLine("You'll be known as V to everyone wait I mean ok listen that was spoilers, just ignore that. I'll call you V from now on though...");
             Console.ReadKey();
+
             Console.WriteLine("Before we continue with our plot devices and whatnot, we're going to roll a die, and depending on it you'll be either a male or female...");
             Console.ReadKey();
+
             morkT = false;
             CSwitch(morkT);
+
             Console.WriteLine("Press any key to do the die roll !");
             rngMeter = 1;
             RNG();
@@ -169,6 +183,15 @@ namespace ConsoleApp1
                 mOrF = false;
             }
             Console.ReadKey();
+            morkT = true;
+            CSwitch(morkT);
+            Console.WriteLine("\nThat's out the way now, let's go back to the TV...");
+            Console.ReadKey();
+            Console.WriteLine("As you lock onto the TV's LCD screen, your hand subconsciously grabs the remote and switches to the brand new TV channel...");
+            Console.ReadKey();
+            Console.WriteLine("Colours. That's all you see, they mesmerise your weak brain. You sit in awe at the TV screen...");
+            Console.ReadKey();
+            Console.WriteLine("Your hand releases off the remote and ");
 
 
 

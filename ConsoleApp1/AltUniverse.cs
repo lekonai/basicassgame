@@ -105,6 +105,8 @@ namespace BestGameEver
                 if (keyPOption.Key == ConsoleKey.A)
                 {
                     // bool jorkPleased = true; // maybe will use, interested... nevermind, won't use because i can just use the displeased bool variable and put it on false
+                    jorkTAlt = true;
+                    JCswitch(jorkTAlt);
                     Console.WriteLine("HAHA !! I HAVE YOU IN AWE.");
                     cKeyPCorrect = true;
                 }
@@ -207,10 +209,28 @@ namespace BestGameEver
             Console.Title = "Jork's land!";
             jorkTAlt = true;
             JCswitch(jorkTAlt);
-
+            Console.WriteLine("WELL WELL well. Hello there little one...");
+            Console.ReadKey();
+            jorkTAlt = false;
+            JCswitch(jorkTAlt);
+            Console.WriteLine("Jork is thinking...");
+            Console.ReadKey();
+            if (jorkDISPleased == true)
+            {
+                rngMeter2 = 0;
+                Console.WriteLine("Do you ever know what it's like to always fail? to feel so insignificant next to my brother?...");
+                Console.ReadKey();
+                morkTAlt = true;
+                Program.CSwitch(morkTAlt);
+                immersiveText("Hi that'd be me I'm his-");
+                jorkTAlt = true;
+                JCswitch(jorkTAlt);
+                Console.Write(" GO AWAY.");
+            }
 
 
         }
+
 
         static public void JCswitch(bool jorkTalking)
         {
@@ -276,6 +296,13 @@ namespace BestGameEver
                     Thread.Sleep(8000);
                     Environment.Exit(0);
                 }
+            }
+        }
+        static public void immersiveText(string stringy) // to make the text look nice
+        {
+            for (int i = 0; i < stringy.Length; i++)
+            {
+                Console.WriteLine(stringy[i]);
             }
         }
     }

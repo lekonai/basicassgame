@@ -8,7 +8,7 @@ using System.Threading;
 namespace BestGameEver
 {
 
-    class Program
+    public class Program
     {
 
         static public int hp = 20; // global variable for hp
@@ -18,6 +18,7 @@ namespace BestGameEver
         
         static public void Main(string[] args)
         {
+
             Console.Title = "The best new six part Danish crime drama"; // console title part 1
             bool morkT = true;
 
@@ -41,8 +42,9 @@ namespace BestGameEver
             morkT = false;
             CSwitch(morkT);
             Console.WriteLine("\n\n(y/n)");
-            string inp = Console.ReadLine();
-            if (inp.ToLower() == "y")
+            ConsoleKeyInfo inp;
+            inp = Console.ReadKey();
+            if (inp.Key == ConsoleKey.Y)
             {
                 // bool keyp = false;
                 // stack overflow did not help, i wanted to make a funny little bit where it basically was just like "hey, you know you can click a button" if an input hadn't been detected but i'm too dumb for that
@@ -64,7 +66,7 @@ namespace BestGameEver
                 // keyp = true;
                 Console.WriteLine("Remember, it's just a game, don't get frustrated by the gambling-like odds...");
             }
-            else if (inp.ToLower() == "n")
+            else if (inp.Key == ConsoleKey.N)
             {
                 morkT = true;
                 CSwitch(morkT);
@@ -201,26 +203,39 @@ namespace BestGameEver
             Console.WriteLine("BWOAAAH Your mind is boggled, your hand is IN the TV??? HOW?? I don't know how that works I'm just Mork...");
             Console.ReadKey();
             
-            Console.WriteLine("You go deeper and deeper until your arm is submerged within it; you only feel a weird tingle as you continuously have your arm willingly eaten by the TV");
+            Console.WriteLine("You go deeper and deeper until your arm is submerged within it; you only feel a weird tingle as you continuously have your arm willingly eaten by the TV...");
             Console.ReadKey();
 
 
             Console.WriteLine("\nIT'S DIE ROLL TIME!!");
             Thread.Sleep(1000);
+
             Console.WriteLine("I'm not going to tell you what it's for :)");
+
             Thread.Sleep(1900);
             Console.WriteLine("You brought this upon yourself by going into that DARN TV.");
             
             morkT = false;
             CSwitch(morkT);
 
-            Console.WriteLine(@"");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Console.WriteLine(@"
+ PRESS ANY KEY... to meet your fate.
+
+        OR for better life...
+
+ ► ► ► ► ► ► ► ► ► ► ► ► ► ► ► ► ► ►
+");
+            Console.ReadKey(); // complete rng that can change your everything LOL
             rngMeter = 2;
             RNG();
             if (rngOutput <= 10)
             {
-                Console.WriteLine("")
+                Console.WriteLine("");
+            }
+            else if (rngOutput > 10)
+            {
+                AltUniverse.AltUni();
             }
 
 
@@ -288,6 +303,13 @@ namespace BestGameEver
             {
                 int num2 = rnggg.Next(1, 21); // like a dnd hit dc
                 rngOutput = num2;
+                string dR = "Dice Rolling..."; // dice rolling fx, this is 15 char, 14 index
+                for (int i = 0; i < dR.Length; i++)
+                {
+                    Thread.Sleep(100);
+                    Console.Write(dR[i]);
+                }
+                Console.WriteLine("");
                 Console.WriteLine(@"-----
 |   |
 |{0}|
@@ -296,8 +318,13 @@ namespace BestGameEver
             }
             else if (rngMeter == 3)
             {
-                int num3 = rnggg.Next(1, 101); // the funny one
+                int num3 = rnggg.Next(1, 101); // the funny one, i probably won't use it.
                 rngOutput = num3;
+                Console.WriteLine(@"-----
+|   |
+|{0}|
+|   |
+-----", rngOutput);
             }
         }
 

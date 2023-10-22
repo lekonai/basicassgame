@@ -14,10 +14,14 @@ namespace BestGameEver
         static public int hp = 20; // global variable for hp
         static public int rngMeter; // global variable that changes the range of rng
         static public int rngOutput; // global variable to share the chance to main etc
-        
-        
+        static public bool mOrF;
+
         static public void Main(string[] args)
         {
+
+
+
+
 
             Console.Title = "The best new six part Danish crime drama"; // console title part 1
             bool morkT = true;
@@ -173,7 +177,9 @@ namespace BestGameEver
             Console.WriteLine("Press any key to do the die roll !");
             rngMeter = 1;
             RNG();
-            bool mOrF; // simple 1 or 0 if you are male or female. M = 1, F = 0
+            // simple 1 or 0 if you are male or female. M = 1, F = 0
+            // annotation remains here, i've turned it into a global variable because i know how to implement it now.
+            // this is like purely for the sake of immersion. wait no i just figured out how to properly implement it.
             if (rngOutput <= 3)
             {
                 Console.WriteLine("\nYou rolled a: {0}, which means you're a male!", rngOutput);
@@ -240,8 +246,28 @@ namespace BestGameEver
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Console.ReadKey(); // wait to quit readkey.
         }
+
 
         static public void RNG()
         {

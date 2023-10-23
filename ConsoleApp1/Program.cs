@@ -54,7 +54,7 @@ namespace BestGameEver
                 // stack overflow did not help, i wanted to make a funny little bit where it basically was just like "hey, you know you can click a button" if an input hadn't been detected but i'm too dumb for that
                 morkT = true;
                 CSwitch(morkT);
-                Console.WriteLine("Welcome... welcome to the most fun you'll have in the past and next 5 minutes");
+                Console.WriteLine("\nWelcome... welcome to the most fun you'll have in the past and next 5 minutes");
                 morkT = false;
                 CSwitch(morkT);
                 Console.WriteLine("Please wait a second or two for everything to process...");

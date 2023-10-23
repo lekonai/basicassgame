@@ -35,7 +35,7 @@ namespace BestGameEver
            |       \\     
            |        |     
            |_________\    ";
-            string heart = "❤"; // for the romance ending.
+            string heart = "<3"; // for the romance ending.
             bool morkTAlt; // introduction of new character.
             morkTAlt = false;
             Program.CSwitch(morkTAlt);
@@ -109,14 +109,14 @@ namespace BestGameEver
                     // bool jorkPleased = true; // maybe will use, interested... nevermind, won't use because i can just use the displeased bool variable and put it on false
                     jorkTAlt = true;
                     JCswitch(jorkTAlt);
-                    Console.WriteLine("HAHA !! I HAVE YOU IN AWE.");
+                    Console.WriteLine("\nHAHA !! I HAVE YOU IN AWE.");
                     cKeyPCorrect = true;
                 }
                 else if (keyPOption.Key == ConsoleKey.B)
                 {
                     jorkTAlt = true;
                     JCswitch(jorkTAlt);
-                    Console.WriteLine("WHAT??? Me and you will NEVER be friends...");
+                    Console.WriteLine("\nWHAT??? Me and you will NEVER be friends...");
                     Console.ReadKey();
                     jorkTAlt = false;
                     JCswitch(jorkTAlt);
@@ -130,7 +130,7 @@ namespace BestGameEver
                     bool mOrF2 = Program.mOrF;
                     jorkTAlt = true;
                     JCswitch(jorkTAlt);
-                    Console.WriteLine("HEHEHEHEHEH. I knew you'd think that... I think...");
+                    Console.WriteLine("\nHEHEHEHEHEH. I knew you'd think that... I think...");
                     Console.ReadKey();
                     Console.WriteLine("I'm... quite flattered. This isn't possible...");
                     Console.Title = "What's going on here?";
@@ -185,7 +185,7 @@ namespace BestGameEver
                         ConsoleKeyInfo loveAcceptance = Console.ReadKey();
                         if (loveAcceptance.Key == ConsoleKey.Y)
                         {
-                            Console.WriteLine("I'm... glad you feel the same");
+                            Console.WriteLine("\nI'm... glad you feel the same");
                             Console.ReadKey();
                             Console.WriteLine("With a puny human... heh heh heh...");
                             Console.ReadKey();
@@ -196,7 +196,7 @@ namespace BestGameEver
                         }
                         else if (loveAcceptance.Key == ConsoleKey.N)
                         {
-                            Console.WriteLine("ok... i see how it is...");
+                            Console.WriteLine("\nok... i see how it is...");
                             jorkDISPleased = true; // this is what happens when you don't accept his love.
                             cKeyPCorrect = true;
                         }
@@ -268,17 +268,17 @@ namespace BestGameEver
             weaponSelector = Console.ReadKey(); // i'm not gonna do no robust design and instead purposefully give you a stick if you don't pick A or B
             if (weaponSelector.Key == ConsoleKey.A)
             {
-                Console.WriteLine("Sword selected!");
+                Console.WriteLine("\nSword selected!");
                 sworGunC = 0;
             }
             else if (weaponSelector.Key == ConsoleKey.B)
             {
-                Console.WriteLine("Gun selected!");
+                Console.WriteLine("\nGun selected!");
                 sworGunC = 1;
             }
             else
             {
-                Console.WriteLine("Because you're annoying, you can get a stick.");
+                Console.WriteLine("\nBecause you're annoying, you can get a stick.");
                 sworGunC = 2;
             }
             jorkTAlt = true;
@@ -575,7 +575,8 @@ namespace BestGameEver
         {
             for (int i = 0; i < stringy.Length; i++)
             {
-                Console.WriteLine(stringy[i]);
+                Thread.Sleep(800);
+                Console.Write(stringy[i]);
             }
         }
     }

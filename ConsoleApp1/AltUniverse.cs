@@ -42,9 +42,10 @@ namespace BestGameEver
             bool jorkTAlt = false;
             Console.WriteLine("\nNothing happens... your arm is stuck there...");
             Console.ReadKey();
+            hp2 -= 2;
             Console.WriteLine(@" │                                  │
  │ YOUR HP HAS BEEN REDUCED BY {1}  │
- │                                  │", hp2 - 2);
+ │                                  │", hp2, 2);
             Thread.Sleep(1000);
             jorkTAlt = true;
             JCswitch(jorkTAlt);

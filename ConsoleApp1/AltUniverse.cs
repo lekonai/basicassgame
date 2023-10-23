@@ -35,7 +35,7 @@ namespace BestGameEver
            |       \\     
            |        |     
            |_________\    ";
-            string heart = @"❤"; // for the romance ending.
+            string heart = "❤"; // for the romance ending.
             bool morkTAlt; // introduction of new character.
             morkTAlt = false;
             Program.CSwitch(morkTAlt);
@@ -44,7 +44,7 @@ namespace BestGameEver
             Console.ReadKey();
             Console.WriteLine(@" │                                  │
  │ YOUR HP HAS BEEN REDUCED BY {1}  │
- │                                  │", Program.hp - 2);
+ │                                  │", hp2 - 2);
             Thread.Sleep(1000);
             jorkTAlt = true;
             JCswitch(jorkTAlt);

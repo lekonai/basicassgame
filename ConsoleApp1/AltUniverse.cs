@@ -302,11 +302,11 @@ namespace BestGameEver
             Random swordRNGdmg = new Random();
             Random stickRNGC = new Random();
             Random stickRNGdmg = new Random();
-             // gives a 70 % chance to hit, gun does substantially more damage
+            // gives a 70 % chance to hit, gun does substantially more damage
             if (sworGun == 0)
             {
                 int gunLuck = gunRNGC.Next(1, 11);
-                int gunDMG = gunRNGdmg.Next(7, 12);
+                int gunDMG = gunRNGdmg.Next(7, 13);
                 if (gunLuck <= 3)
                 {
                     Console.WriteLine("You miss spectacularly!");
@@ -323,11 +323,11 @@ namespace BestGameEver
             }
             else if (sworGun == 1) // tbf, i could have a singular luck random and change the conditionals, but i'd rather have separate luck stats
             {
-                int swordLuck = swordRNGC.Next(1,7);
-                int swordDMG = swordRNGdmg.Next(1, 9);
+                int swordLuck = swordRNGC.Next(1, 7);
+                int swordDMG = swordRNGdmg.Next(3, 10);
                 if (swordLuck >= 2)
                 {
-                    Console.WriteLine("YOU HIT! DOING {0} DAMAGE!",swordDMG);
+                    Console.WriteLine("YOU HIT! DOING {0} DAMAGE!", swordDMG);
                     jorkHP -= swordDMG;
                     Thread.Sleep(1000);
                 }
@@ -342,7 +342,7 @@ namespace BestGameEver
             else if (sworGun == 2)
             {
                 int stickLuck = stickRNGC.Next(1, 5);
-                int stickDMG = stickRNGdmg.Next(1,3);
+                int stickDMG = stickRNGdmg.Next(1, 3);
                 if (stickLuck == 1)
                 {
                     Console.WriteLine("You hit! Dealing {0} DMG");
@@ -369,11 +369,53 @@ namespace BestGameEver
                 }
 
             }
+        }
+        static public void jorkAttackCMD()
+        {
+            // to copy and paste: Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+            Random rngHIT = new Random();
+            Random rngDMG = new Random();
+            int hitChances = rngHIT.Next(1, 5); // he has a 25% chance to fail
+            if (hitChances == 1)
+            {
+                Console.WriteLine("Jork misses... he's visibly sad");
+                Thread.Sleep(1000);
+                Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+            }
+            else if (hitChances > 1)
+            {
+                int hitDMG = rngDMG.Next(1, 3);
+                Console.WriteLine("Jork FLATTENS you with a whole {0} DAMAGE!", hitDMG);
+                Thread.Sleep(1000);
+                Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+            }
 
+        }
+        // i could pack the heal and attack method into one, but for the sake of comprehensibility and ease of use, i'll separate them
+        static public void jorkHealCMD()
+        {
+            Random rngSPELL = new Random();
+            Random rngHEAL = new Random();
+            int spellChance = rngSPELL.Next(1,11);
+            if (spellChance <= 5)
+            {
+                int selfHeal = rngHEAL.Next(1, 4);
+                Console.WriteLine("Jork successfully heals himself with {0} HP!", selfHeal);
+                jorkHP += selfHeal;
+                Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
 
-
-
-
+            }
+            else if (spellChance > 5)
+            {
+                int woopsHeal = rngHEAL.Next(4, 9);
+                Console.WriteLine("Somehow... Jork healed YOU with {0} HP!", woopsHeal);
+                JCswitch(true);
+                Console.WriteLine("woops.");
+                Thread.Sleep(1000);
+                JCswitch(false);
+                hp2 += woopsHeal;
+                Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+            }
         }
 
         static public void JCswitch(bool jorkTalking)

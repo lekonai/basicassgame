@@ -286,9 +286,93 @@ namespace BestGameEver
             Console.WriteLine("\nFIGHT ME, SQUIRE, I DON'T WANT TO SEE YOUR PATHETIC FACE...");
             firstTime = true;
             JCswitch(false);
+            Console.Title = "Blue Banishment";
             Console.WriteLine("You initiate the first attack...");
-            attackCMD(sworGunC);
             Console.ReadKey();
+            int jorkDecider;
+            Random jorkDChance = new Random(); // this will dictate what jork does in this combat scenario.
+            while (jorkHP > 0 && hp2 > 0)
+            {
+                jorkDecider = jorkDChance.Next(1, 3);
+                Console.WriteLine("You go in for an attack...");
+                attackCMD(sworGunC);
+                Console.ReadKey();
+                JCswitch(true);
+                Console.WriteLine("My turn...");
+                JCswitch(false);
+                if (jorkDecider == 1 && jorkHP > 0) // attack
+                {
+                    jorkAttackCMD();
+                    Console.ReadKey();
+                }
+                else if (jorkDecider == 2 && jorkHP > 0) // heal
+                {
+                    jorkHealCMD();
+                    Console.ReadKey();
+                }
+            }
+            if (jorkHP <= 0)
+            {
+                JCswitch(true);
+                Console.WriteLine("Wow... it's true... I will forever be inferior to my brother...");
+                Console.ReadKey();
+                Console.WriteLine("You know, this battle, of all battles, I finally felt something in this one...");
+                Console.ReadKey();
+                Console.WriteLine("It was nice knowing you.");
+                Console.Title = "Back To Reality...";
+                JCswitch(false);
+                Thread.Sleep(1000);
+                Console.WriteLine(@"
+        _.---,._,'
+       /' _.--.<
+         /'     `'
+       /' _.---._____
+       \.'   ___, .-'`
+           /'    \\             .
+         /'       `-.          -|-
+        |                       |
+        |                   .-'~~~`-.
+        |                 .'         `.
+        |                 |  R  I  P  |
+        |                 |  J O R K  |
+        |                 |           |
+         \              \\|           |//
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+                Console.WriteLine("\nAnd that wraps up the story of Jork...");
+                Console.ReadKey();
+                Console.WriteLine("Everything around you returns to normal...");
+                Console.ReadKey();
+                Console.WriteLine("Even your arm... that's back too. Your head feels better too... that's odd, was any of this of reality?");
+                Thread.Sleep(1200);
+                immersiveText("Could this all have been a dream...      ?");
+                Thread.Sleep(2000);
+                Console.WriteLine("No, that'd be an embarrassingly bad ending, let's just write it off as a big unknown, make this ending whatever you want it to be.");
+                Console.WriteLine("\nGAME CLOSING IN 8 SECONDS...");
+                Thread.Sleep(8000);
+                Environment.Exit(0);
+            }
+            else if (hp2 <= 0)
+            {
+                JCswitch(true);
+                Console.WriteLine("\nI expected more fight in you... pathetic");
+                Console.ReadKey();
+                Console.WriteLine("Live a good life, gone from this realm.");
+                JCswitch(false);
+                if (sworGunC == 2)
+                {
+                    Console.WriteLine("EPIC GAME TIP: DON'T USE STICK NEXT TIME...");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("Good luck on your next run...");
+                    Console.ReadKey();
+                }
+                Console.WriteLine("GAME CLOSING IN 8 SECONDS.... LOSER.");
+                Thread.Sleep(8000);
+                Environment.Exit(0);
+            }
+
 
 
             Console.ReadKey();

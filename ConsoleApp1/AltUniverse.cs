@@ -13,6 +13,8 @@ namespace BestGameEver
         static public int rngMeter2;
         static public int rngOutput2;
         static public bool failure;
+        static public bool firstTime;
+        static public int jorkHP = 20;
         static public void AltUni()
         {
             Console.Title = "An Unfamiliar Blue...";
@@ -95,7 +97,6 @@ namespace BestGameEver
 ");
             Console.WriteLine("\nFun Game Tip: this is a key input, so just press a button :D (please obey this command sensibly.)");
             bool cKeyPCorrect = false; // just easier for a while loop, big up robust design!
-            int jorkHP = 20;
             bool jorkDISPleased = false;
             ConsoleKeyInfo keyPOption;
             do
@@ -218,19 +219,162 @@ namespace BestGameEver
             if (jorkDISPleased == true)
             {
                 rngMeter2 = 0;
-                Console.WriteLine("Do you ever know what it's like to always fail? to feel so insignificant next to my brother?...");
+                Console.WriteLine("Do you ever know what it's like to always fail? to feel so insignificant in comparison to my brother?...");
                 Console.ReadKey();
                 morkTAlt = true;
                 Program.CSwitch(morkTAlt);
+                morkTAlt = false;
                 immersiveText("Hi that'd be me I'm his-");
                 jorkTAlt = true;
                 JCswitch(jorkTAlt);
-                Console.Write(" GO AWAY.");
+                Console.Write(" GO AWAY...");
+                Console.ReadKey();
+                Console.WriteLine("Would you like to experience what it's like to fail?...\n[Y/N]");
+                Console.ReadKey();
+                Console.WriteLine("JUST KIDDING! THIS IS NO OPTION, HERE WE GOOOOO!");
+                messedUpDie();
+                JCswitch(jorkTAlt);
+                Console.ReadKey();
+                Console.WriteLine("Hmph... you're lucky...");
+
+            }
+            else
+            {
+                Console.WriteLine("Jork seems to be nor pleased nor displeased...");
+                Console.ReadKey();
+                Console.WriteLine("You seem slightly threatened... but that's it, it's only slight...");
+            }
+            jorkTAlt = true;
+            JCswitch(jorkTAlt);
+            Console.ReadKey();
+            Console.WriteLine("Now... what to do with YOU...");
+            Console.ReadKey();
+            jorkTAlt = false;
+            JCswitch(jorkTAlt);
+            Console.WriteLine(@"
+ CHOOSE YOUR WEAPON.
+ ┌─────────────────┐
+ │    [A] SWORD    │
+ │    [B] GUN      │
+ └─────────────────┘
+");
+            int sworGunC; // simple int that decides what weapon
+            // 0 for sword
+            // 1 for gun
+            // 2 for stick
+            ConsoleKeyInfo weaponSelector;
+            Console.WriteLine("\nSELECT A KEY."); 
+            weaponSelector = Console.ReadKey(); // i'm not gonna do no robust design and instead purposefully give you a stick if you don't pick A or B
+            if (weaponSelector.Key == ConsoleKey.A)
+            {
+                Console.WriteLine("Sword selected!");
+                sworGunC = 0;
+            }
+            else if (weaponSelector.Key == ConsoleKey.B)
+            {
+                Console.WriteLine("Gun selected!");
+                sworGunC = 1;
+            }
+            else
+            {
+                Console.WriteLine("Because you're annoying, you can get a stick.");
+                sworGunC = 2;
+            }
+            jorkTAlt = true;
+            JCswitch(jorkTAlt); // there's one thing i realised a while back and that's i could've just put true or false in jcswitch LOL, so i'm going to do that from now on.
+            Thread.Sleep(1000);
+            Console.WriteLine("\nFIGHT ME, SQUIRE, I DON'T WANT TO SEE YOUR PATHETIC FACE...");
+            firstTime = true;
+            JCswitch(false);
+            Console.WriteLine("You initiate the first attack...");
+            attackCMD(sworGunC);
+            Console.ReadKey();
+
+
+            Console.ReadKey();
+        }
+
+        static public void attackCMD(int sworGun)
+        {
+            Random gunRNGC = new Random();
+            Random gunRNGdmg = new Random();
+            Random swordRNGC = new Random();
+            Random swordRNGdmg = new Random();
+            Random stickRNGC = new Random();
+            Random stickRNGdmg = new Random();
+             // gives a 70 % chance to hit, gun does substantially more damage
+            if (sworGun == 0)
+            {
+                int gunLuck = gunRNGC.Next(1, 11);
+                int gunDMG = gunRNGdmg.Next(7, 12);
+                if (gunLuck <= 3)
+                {
+                    Console.WriteLine("You miss spectacularly!");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+                }
+                else if (gunLuck > 3)
+                {
+                    Console.WriteLine("You hit! Dealing {0} damage", gunDMG);
+                    jorkHP -= gunDMG;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+                }
+            }
+            else if (sworGun == 1) // tbf, i could have a singular luck random and change the conditionals, but i'd rather have separate luck stats
+            {
+                int swordLuck = swordRNGC.Next(1,7);
+                int swordDMG = swordRNGdmg.Next(1, 9);
+                if (swordLuck >= 2)
+                {
+                    Console.WriteLine("YOU HIT! DOING {0} DAMAGE!",swordDMG);
+                    jorkHP -= swordDMG;
+                    Thread.Sleep(1000);
+                }
+                else if (swordLuck == 1)
+                {
+                    Console.WriteLine("You missed... horrifically.");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+                }
+
+            }
+            else if (sworGun == 2)
+            {
+                int stickLuck = stickRNGC.Next(1, 5);
+                int stickDMG = stickRNGdmg.Next(1,3);
+                if (stickLuck == 1)
+                {
+                    Console.WriteLine("You hit! Dealing {0} DMG");
+                    jorkHP -= stickDMG;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Your health is: {0}, Jork's health is: {1}...", hp2, jorkHP);
+                }
+                else if (stickLuck > 1)
+                {
+                    Console.WriteLine("you FAILED!");
+                    rngMeter2 = 0;
+                    if (firstTime == true)
+                    {
+                        Console.WriteLine("Oh.. by the way, this is your first time so you don't know about this... but essentially, every time you miss with the stick the failure die gets rolled...");
+                        immersiveText(".... you brought this upon yourself");
+                        messedUpDie();
+                        firstTime = false;
+                    }
+                    else if (firstTime == false)
+                    {
+                        Console.WriteLine("YOU MISSED! AND FAILED!");
+                        messedUpDie();
+                    }
+                }
+
             }
 
 
-        }
 
+
+
+        }
 
         static public void JCswitch(bool jorkTalking)
         {
@@ -279,7 +423,9 @@ namespace BestGameEver
                 Console.WriteLine("ULTIMATE FAIL DIE INITIATED.");
                 if (failOutput > 1)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("You DON'T FAIL this time. BE GLAD.");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 else if (failOutput == 1)
                 {

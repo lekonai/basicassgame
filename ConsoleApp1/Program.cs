@@ -19,8 +19,7 @@ namespace BestGameEver
         static public void Main(string[] args)
         {
 
-            // testingClass.theTesting(); in case i need to test any code, just put it here
-
+            // testingClass.theTesting(); // in case i need to test any code, just put it here
 
 
             Console.Title = "The best new six part Danish crime drama"; // console title part 1
@@ -237,15 +236,144 @@ namespace BestGameEver
             RNG();
             if (rngOutput <= 10)
             {
-                Console.WriteLine("");
+                Console.WriteLine("You fall into the TV...");
+                Console.Title = "A new realm...";
             }
             else if (rngOutput > 10)
             {
-                AltUniverse.AltUni();
+                AltUniverse.AltUni(); // this is one of the paths of the game.
             }
+            Console.ReadKey();
+            Console.WriteLine("Around you is a variety of pathways... like channels. Who knows what's in them...");
+            Console.ReadKey();
+            Console.WriteLine("The environment is awfully yellow...");
+            Console.ReadKey();
+            Console.WriteLine("In front of you is...");
+            Console.ReadKey();
+            Console.WriteLine("\n" + @"          ____  
+        o8%8888,    
+      o88%8888888.  
+     8'-    -:8888b   
+    8'         8888  
+   d8.-=. ,==-.:888b  
+   >8 `~` :`~' d8888   
+   88         ,88888   
+   88b. `-~  ':88888  
+   888b ~==~ .:88888 
+   88888o--:':::8888      
+   `88888| :::' 8888b  
+   8888^^'       8888b  
+  d888           ,%888b.   
+ d88%            %%%8--'-.  
+/88:.__ ,       _%-' ---  -  
+    '''::===..-'   =  --.");
+            Thread.Sleep(3000);
+            
+            CSwitch(true);
+            Console.WriteLine("Who do you think this is?...");
+            Console.ReadKey();
+            Console.WriteLine("This fine... handsome young man...");
+            Console.ReadKey();
+            CSwitch(false);
+
+            Console.WriteLine("\n" + @"\n
+ ┌──────────────────────────────────────────────────────────────────────────────┐
+ │ Dialogue Options:                                                            │
+ │[A] You don't look that much like a man... maybe like a world-famous painting?│
+ │[B] I don't know I just got here!                                             │
+ │[C] I don't care                                                              │
+ └──────────────────────────────────────────────────────────────────────────────┘
+");
+            ConsoleKeyInfo monaLisaChoice;
+            bool acquiredTaste = false; // just if you like compliment Mork you uknow
+            // i could do robust design but the funniest is always to give an alternate route if you say something else
+            monaLisaChoice = Console.ReadKey();
+
+            switch (monaLisaChoice.Key)
+            {
+                case ConsoleKey.A:
+                    acquiredTaste = true;
+                    CSwitch(true);
+                    Console.WriteLine("\nYESSSSS I'm glad you know what I'm based off... the most beautiful painting out there!...");
+                    Console.ReadKey();
+                    Console.Write("My creator wanted me to be his best creation... unlike my brother - who you may meet in another universe ");
+                    CSwitch(false);
+                    Console.Write("(literally)");
+                    CSwitch(true);
+                    Console.Write(" - that was created as a complete mistake by my creator...");
+                    Console.ReadKey();
+                    Console.WriteLine("Anyway... that's enough about me, I should probably show you around...");
+                    break;
+                case ConsoleKey.B:
+                    CSwitch(true);
+                    Console.WriteLine("Fair point... well... who do you think's been talking to you this entire time?");
+                    Console.ReadKey();
+                    Console.WriteLine("...Speechless? It's been the legendary Mork himself that's who...");
+                    Console.ReadKey();
+                    Console.Write("Still not saying anything?... Wow, I guess I just have that effect on ");
+                    if (mOrF == true)
+                    {
+                        Console.Write("men...");
+                    }
+                    else if (mOrF == false)
+                    {
+                        Console.Write("women...");
+                    }
+                    Console.ReadKey();
+                    Console.WriteLine("Anyway... if you understand English, I'll show you around...");
+                    break;
+                case ConsoleKey.C:
+                    CSwitch(true);
+                    Console.WriteLine("\nYou can just leave if you want you know what I hate you can you leave?...");
+                    Console.ReadKey();
+                    Console.WriteLine("You really are a quiet one... you know what, I can't stand the sight of you and your attitude, I'm kicking you out");
+                    Thread.Sleep(2000);
+                    CSwitch(false);
+                    Console.WriteLine(@"
+ ┌────────┐         ┌────────┐
+ │        │         │        │
+ │        │         │        │
+ │        │         │        │
+ │        │ ┌─────┐ │        │
+ │        ├─┤     ├─┤        │
+ │ BANNNN ├─┤     ├─┤ HAMMER │
+ │        │ │     │ │        │
+ │        │ │     │ │        │
+ │        │ │     │ │        │
+ │        │ │     │ │        │
+ └────────┘ │     │ └────────┘
+            │     │
+            │     │
+            │     │
+            │     │
+            │     │
+            │     │
+            │     │
+            └─────┘
+");
+
+                    Console.WriteLine("You've been banished... back to your home...");
+                    Console.ReadKey();
+                    Console.WriteLine("While you didn't really lose anything, you feel like you've lost everything anyway... it feels like you could've had a huge adventure...");
+                    Console.ReadKey();
+                    Console.WriteLine("Well... well done then... you've annoyed some random guy and now you've missed out on a GREAT adventure");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\nENDING: Annoyed sentient ethereal being, asked to leave.");
+                    Console.WriteLine("GAME CLOSING IN 8 SECONDS...");
+                    Thread.Sleep(8000);
+                    Environment.Exit(0);
+                    break;
+                default:
+                    CSwitch(true);
+                    Console.WriteLine("\nSpeechless huh?...");
 
 
 
+
+
+                    break;
+            }
+            Console.ReadKey();
 
 
 

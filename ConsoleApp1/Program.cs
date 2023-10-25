@@ -244,6 +244,7 @@ namespace BestGameEver
                 AltUniverse.AltUni(); // this is one of the paths of the game.
             }
             Console.ReadKey();
+            Console.Title = "The TV World";
             Console.WriteLine("Around you is a variety of pathways... like channels. Who knows what's in them...");
             Console.ReadKey();
             Console.WriteLine("The environment is awfully yellow...");
@@ -324,6 +325,7 @@ namespace BestGameEver
                     break;
                 case ConsoleKey.C:
                     CSwitch(true);
+                    Console.Title = "You've got a bit of an attitude.";
                     Console.WriteLine("\nYou can just leave if you want you know what I hate you can you leave?...");
                     Console.ReadKey();
                     Console.WriteLine("You really are a quiet one... you know what, I can't stand the sight of you and your attitude, I'm kicking you out");
@@ -352,13 +354,14 @@ namespace BestGameEver
             └─────┘
 ");
 
+                    Console.Title = "Well, adventure avoided";
                     Console.WriteLine("You've been banished... back to your home...");
                     Console.ReadKey();
                     Console.WriteLine("While you didn't really lose anything, you feel like you've lost everything anyway... it feels like you could've had a huge adventure...");
                     Console.ReadKey();
                     Console.WriteLine("Well... well done then... you've annoyed some random guy and now you've missed out on a GREAT adventure");
                     Thread.Sleep(1000);
-                    Console.WriteLine("\nENDING: Annoyed sentient ethereal being, asked to leave.");
+                    Console.WriteLine("\nENDING: Annoyed sentient ethereal being; asked to leave.");
                     Console.WriteLine("GAME CLOSING IN 8 SECONDS...");
                     Thread.Sleep(8000);
                     Environment.Exit(0);
@@ -366,30 +369,66 @@ namespace BestGameEver
                 default:
                     CSwitch(true);
                     Console.WriteLine("\nSpeechless huh?...");
-
-
-
-
-
+                    Console.ReadKey();
+                    Console.WriteLine("I guess I'm just that awesome in a human's eyes...");
                     break;
             }
             Console.ReadKey();
+            Console.WriteLine("Well... there's not much around here, but you can choose which channel you'd like to visit...");
+            Console.ReadKey();
+            Console.WriteLine("It's been a while since I've been through 'em, so I can't truly explain what's on each side...");
+            ConsoleKeyInfo channelEnter;
+            CSwitch(false);
+            Console.WriteLine(@"
+ ┌────────────────────────────────────┐
+ │                                    │
+ │ WHERE TO?                          │
+ │                                    │
+ │ [A] CHANNEL 1                      │
+ │ [B] CHANNEL 2                      │
+ │ [ANY] I'm not very bothered lol... │
+ │                                    │
+ │                                    │
+ └────────────────────────────────────┘
+");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            channelEnter = Console.ReadKey();
+            switch (channelEnter.Key)
+            {
+                case ConsoleKey.A:
+                    Console.WriteLine("\nYou go towards the door of the first channel; you say bye to Mork...");
+                    ChannelA.ChannelAYEAH();
+                    break;
+                case ConsoleKey.B:
+                    Console.WriteLine("\nYou go towards the door of the second channel; you say bye to Mork...");
+                    ChannelB.ChannelBYEAH();
+                    break;
+                default:
+                    Console.Title = "Tea Time";
+                    CSwitch(true);
+                    Console.WriteLine("\nWell... that being said...");
+                    break;
+            }
+            Console.ReadKey();
+            Console.WriteLine("Come sit with me, we can have some tea, I love tea...");
+            Console.ReadKey();
+            Console.WriteLine("You know, you can leave and come back any time, there's a door literally right behind us...");
+            Console.ReadKey();
+            CSwitch(false);
+            Console.WriteLine(@"'Huh... that must be new, I've never seen that door before' - you think to yourself...");
+            CSwitch(true);
+            Console.WriteLine("Well, I hope you like sugar, cause I'm adding loads of sugar to your tea...");
+            Console.ReadKey();
+            Console.WriteLine("(P.S you don't have a choice.)");
+            CSwitch(false);
+            Console.WriteLine("\nYou spend the rest of your days visiting Mork; you still don't understand how a painting is drinking tea or doing any of this... but you enjoy the peaceful life you now have and the friend you've made...");
+            Console.ReadKey();
+            Console.WriteLine("Your drinking habits go away and things are really looking up... you still don't know whether this is real so thank god you don't have any friends to talk about this to...");
+            Console.ReadKey();
+            Console.WriteLine("ENDING: Peace and tranquility...");
+            Console.WriteLine("GAME CLOSING IN 8 SECONDS.");
+            Thread.Sleep(8000);
+            Environment.Exit(0);
 
 
 

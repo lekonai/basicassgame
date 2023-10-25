@@ -575,7 +575,7 @@ namespace BestGameEver
         {
             for (int i = 0; i < stringy.Length; i++)
             {
-                Thread.Sleep(800);
+                Thread.Sleep(400);
                 Console.Write(stringy[i]);
             }
         }

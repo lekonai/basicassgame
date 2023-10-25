@@ -13,7 +13,7 @@ namespace BestGameEver
         {
             // testing code, just call this method through Main[]
             // the best way for me to test this stuff after is for me to just give an executable to a friend haha
-            Console.WriteLine("\n" + @"Bunger");
+            ChannelA.ChannelAYEAH();
 
         }
     }

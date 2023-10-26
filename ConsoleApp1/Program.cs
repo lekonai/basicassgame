@@ -129,7 +129,7 @@ namespace BestGameEver
             morkT = false;
             CSwitch(morkT);
 
-            Console.WriteLine("What are you to do?:\n[A] Click on the new channel\n[B] Turn off the TV and continue sleeping");
+            Console.WriteLine("What are you to do?:\n[A] Click on the new channel\n[B] Turn off the TV and continue sleeping"); // first choice, easy one good one bad lol
             bool choiceSelection = false;
             while (choiceSelection == false){
                 string theChoice1 = Console.ReadLine().ToUpper();
@@ -142,6 +142,9 @@ namespace BestGameEver
                         morkT = true;
                         CSwitch(morkT);
                         Console.WriteLine("You have a nice dream... and that's the end of your story");
+                        Console.WriteLine("ENDING: boring ending, play again.");
+                        Console.WriteLine("\nGAME CLOSING IN 8 SECONDS");
+                        Thread.Sleep(8000);
                         Environment.Exit(0);
                         break;
                     default:
@@ -286,7 +289,7 @@ namespace BestGameEver
  └──────────────────────────────────────────────────────────────────────────────┘
 ");
             ConsoleKeyInfo monaLisaChoice;
-            bool acquiredTaste = false; // just if you like compliment Mork you uknow
+            bool acquiredTaste = false; // just if you like compliment Mork you know
             // i could do robust design but the funniest is always to give an alternate route if you say something else
             monaLisaChoice = Console.ReadKey();
 
@@ -361,7 +364,7 @@ namespace BestGameEver
                     Console.ReadKey();
                     Console.WriteLine("Well... well done then... you've annoyed some random guy and now you've missed out on a GREAT adventure");
                     Thread.Sleep(1000);
-                    Console.WriteLine("\nENDING: Annoyed sentient ethereal being; asked to leave.");
+                    Console.WriteLine("\nENDING: Annoyed sentient ethereal being; asked to leave."); // rude ending
                     Console.WriteLine("GAME CLOSING IN 8 SECONDS...");
                     Thread.Sleep(8000);
                     Environment.Exit(0);
@@ -433,6 +436,7 @@ namespace BestGameEver
 
 
             Console.ReadKey(); // wait to quit readkey.
+            // now that i'm a bit later in development from the point i wrote the line of code on top of this one i realised it's redundant, but i'm leaving it for the sake of character development
         }
 
 

@@ -11,6 +11,14 @@ namespace BestGameEver
     {
         static public void ChannelAYEAH()
         {
+            Console.WriteLine("\n");
+            Thread.Sleep(2500);
+            Console.Write(".");
+            Thread.Sleep(2000);
+            Console.Write(".");
+            Thread.Sleep(2000);
+            Console.Write(".");
+            Console.WriteLine("");
             immersiveText("It's oddly quiet here");
             Console.WriteLine("");
             Thread.Sleep(1200);
@@ -82,7 +90,7 @@ namespace BestGameEver
             LSwitch(true);
             Console.Write(" lives on... forever");
             LSwitch(false);
-            Console.WriteLine("GAME CLOSING IN 8 SECONDS");
+            Console.WriteLine("GAME CLOSING IN 8 SECONDS"); // the channels need to be bad, for the sake of metaphors ! TV is bad or something idk. power of friendship with jork and mork forever
             Thread.Sleep(8000);
             Environment.Exit(0);
         }
@@ -94,7 +102,7 @@ namespace BestGameEver
                 Console.Write(stringy[i]);
             }
         }
-        static public void LSwitch(bool switcher)
+        static public void LSwitch(bool switcher) // switch colour to green
         {
             if (switcher == true)
             {

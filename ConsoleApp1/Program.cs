@@ -95,11 +95,11 @@ namespace BestGameEver
 
             Console.WriteLine("\nSorry are you expe- OH yes this is a game, okay let me just boot it up. Well.. okay, enjoy !");
 
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             morkT = false;
             CSwitch(morkT);
             Console.WriteLine("\nPLEASE WAIT.");
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
             Console.Title = "Rays of electrical light"; // console title changes for mood
             string wakeUp = @" _______________
 |,----------.  |\
@@ -177,6 +177,7 @@ namespace BestGameEver
             CSwitch(morkT);
 
             Console.WriteLine("Press any key to do the die roll !");
+            Console.ReadKey();
             rngMeter = 1;
             RNG();
             // simple 1 or 0 if you are male or female. M = 1, F = 0
@@ -280,7 +281,7 @@ namespace BestGameEver
             Console.ReadKey();
             CSwitch(false);
 
-            Console.WriteLine("\n" + @"\n
+            Console.WriteLine("\n" + @"
  ┌──────────────────────────────────────────────────────────────────────────────┐
  │ Dialogue Options:                                                            │
  │[A] You don't look that much like a man... maybe like a world-famous painting?│

@@ -19,7 +19,7 @@ namespace BestGameEver
         static public void Main(string[] args)
         {
 
-            testingClass.theTesting(); // in case i need to test any code, just put it here
+            // testingClass.theTesting(); // in case i need to test any code, just put it here
 
 
             Console.Title = "The best new six part Danish crime drama"; // console title part 1
